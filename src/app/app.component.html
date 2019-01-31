@@ -1,34 +1,20 @@
-<h4>Esto tiene String interpolation, Property Binding y Event Binding</h4>
-<button [disabled]="!listo" (click)="count()">Click</button>
-{{contador}}
-<hr/>
-<h4>Aqui hacemos two way data binding</h4>
-<input type="text" placeholder="Nombre" [(ngModel)]="nombre" />
-Mi nombre es {{ nombre }}
-
-<hr/>
-<ul>
-  <ng-container *ngFor="let lugar of lugares">
-      <li *ngIf="lugar.active">{{ lugar.nombre }}</li>
-  </ng-container>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Mi app de test</a>
+   
   
-</ul>
-<hr/>
-<ul class="list-group">
-  <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
-     <a > 
-      <li contar-clicks [ngStyle]="{color:(lugar.active)?'black' : 'grey'}" [ngClass]="{numero_par: (i+1) % 2 !== 0}" [resaltar]="lugar.plan">
-          {{ lugar.nombre }} -
-          <span *ngSwitchCase="1" [ngStyle]="{color:'green'}">Cerca</span>
-          <span *ngSwitchCase="2" [ngStyle]="{color:'blue'}">Maso </span>
-          <span *ngSwitchCase="3" [ngStyle]="{color:'red'}">Lejos</span>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li routerLinkActive="active" class="nav-item ">
+          <a class="nav-link" routerLink="/lugares">Lugares <span class="sr-only">(current)</span></a>
         </li>
-      </a>
-  </ng-container>
-  
-</ul>
-<hr/>
-<agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="/detalle/1">Detalle</a>
+        </li>
+
+
+      </ul>
+
+    </div>
+  </nav>
+
 <router-outlet></router-outlet>
