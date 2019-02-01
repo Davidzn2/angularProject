@@ -10,7 +10,7 @@ export class DetalleComponent {
 
   id=null;
   lugar = {};
-    constructor(private route: ActivatedRoute, private lugaresService:LugaresService){
+    constructor(public route: ActivatedRoute, private lugaresService:LugaresService){
       console.log(this.route.snapshot.params['id']);
       console.log(this.route.snapshot.queryParams);
       this.id = this.route.snapshot.params['id'];
