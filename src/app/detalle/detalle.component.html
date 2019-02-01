@@ -1,3 +1,12 @@
-<h1>Detalle</h1>
+<div class="container">
+    <h1>{{lugar.nombre}}</h1>
+    <hr>
+    <small>{{lugar.distancia}} KM</small>
+    <div class="well">
+        <p>
+            {{lugar.descripcion}}
+        </p>
+        <b>Plan: {{lugar.plan}}</b>
+    </div>
 
 <router-outlet></router-outlet>
